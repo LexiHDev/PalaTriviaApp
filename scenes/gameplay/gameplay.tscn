@@ -59,9 +59,11 @@ __meta__ = {
 [node name="HSplitContainer" type="HSplitContainer" parent="Control"]
 margin_right = 1004.0
 margin_bottom = 545.0
+custom_constants/separation = 30
+dragger_visibility = 1
 
 [node name="Panel" type="Panel" parent="Control/HSplitContainer"]
-margin_right = 280.0
+margin_right = 271.0
 margin_bottom = 545.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
@@ -140,7 +142,7 @@ margin_right = 228.0
 margin_bottom = 836.0
 
 [node name="Panel2" type="Panel" parent="Control/HSplitContainer"]
-margin_left = 292.0
+margin_left = 301.0
 margin_right = 1004.0
 margin_bottom = 545.0
 size_flags_horizontal = 3
