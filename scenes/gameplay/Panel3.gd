@@ -15,7 +15,11 @@ func _process(_delta):
 
 
 func _on_CloseButton_pressed():
-	get_tree().quit()
+	if OS.has_feature('HTML5'):
+		JavaScript.eval("window.location.replace(\"https://twitch.tv/pala1boi\")")
+	else:
+		get_tree().quit()
+
 
 
 func _on_MinimizeButton_pressed():
