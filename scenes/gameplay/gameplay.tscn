@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://User.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/underline.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/box.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/cross.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/cog_wheel.png" type="Texture" id=5]
+[ext_resource path="res://scenes/gameplay/gameplay.gd" type="Script" id=5]
 [ext_resource path="res://assets/themes/uni_theme.tres" type="Theme" id=6]
 [ext_resource path="res://scenes/gameplay/Panel3.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/cog_wheel.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0313726, 0, 0.0980392, 1 )
@@ -40,6 +41,7 @@ corner_radius_bottom_left = 20
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 6 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -174,7 +176,7 @@ __meta__ = {
 margin_right = 35.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
-icon = ExtResource( 5 )
+icon = ExtResource( 8 )
 align = 0
 expand_icon = true
 __meta__ = {
@@ -216,4 +218,5 @@ __meta__ = {
 
 [connection signal="gui_input" from="Panel3" to="Panel3" method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="." method="_on_maximized_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]

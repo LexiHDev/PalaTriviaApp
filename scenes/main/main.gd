@@ -35,6 +35,7 @@ func _ready() -> void:
 	scenes.connect("change_finished", self, "_on_Scenes_change_finished")
 	get_node("/root/").call_deferred("add_child", scenes)
 	get_tree().get_root().set_transparent_background(true)
+#	OS.set_window_maximized(true)
 
 
 func _on_screen_resized():
