@@ -73,6 +73,7 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
+theme = ExtResource( 6 )
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,7 +82,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 236.0
+margin_right = 242.0
 margin_bottom = 838.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -90,51 +91,51 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 234.0
+margin_right = 240.0
 
 [node name="HBoxContainer6" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 84.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 164.0
 
 [node name="HBoxContainer7" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 168.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 248.0
 
 [node name="HBoxContainer8" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 252.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 332.0
 
 [node name="HBoxContainer9" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 336.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 416.0
 
 [node name="HBoxContainer10" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 420.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 500.0
 
 [node name="HBoxContainer2" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 504.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 584.0
 
 [node name="HBoxContainer3" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 588.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 668.0
 
 [node name="HBoxContainer4" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 672.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 752.0
 
 [node name="HBoxContainer5" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 756.0
-margin_right = 234.0
+margin_right = 240.0
 margin_bottom = 836.0
 
 [node name="Panel2" type="Panel" parent="Control/HSplitContainer"]

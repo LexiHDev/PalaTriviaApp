@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=4 format=2]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [ext_resource path="res://assets/themes/styleBox_Flat_purple_box_whiteborder.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/themes/styleBox_Flat_lPurple.tres" type="StyleBox" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/NicoBold-Monospaced.ttf"
@@ -12,3 +13,14 @@ font_data = SubResource( 1 )
 default_font = SubResource( 2 )
 Panel/styles/panel = ExtResource( 1 )
 PanelContainer/styles/panel = ExtResource( 1 )
+ScrollContainer/constants/rect_min_size.x = 0
+ScrollContainer/styles/bg = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 2 )
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = ExtResource( 1 )
+VScrollBar/styles/scroll_focus = null
