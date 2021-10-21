@@ -1,7 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=4 format=2]
 
 [ext_resource path="res://assets/themes/styleBox_Flat_purple_box_whiteborder.tres" type="StyleBox" id=1]
 
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/NicoBold-Monospaced.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
 [resource]
+default_font = SubResource( 2 )
 Panel/styles/panel = ExtResource( 1 )
 PanelContainer/styles/panel = ExtResource( 1 )
