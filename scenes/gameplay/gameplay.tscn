@@ -240,7 +240,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control2" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="gui_input" from="Panel3" to="Panel3" method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="." method="_on_maximized_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
+[connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]
