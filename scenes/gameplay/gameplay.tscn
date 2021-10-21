@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://User.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/underline.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sprites/cross.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/cog_wheel.png" type="Texture" id=5]
 [ext_resource path="res://assets/themes/uni_theme.tres" type="Theme" id=6]
+[ext_resource path="res://scenes/gameplay/Panel3.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0313726, 0, 0.0980392, 1 )
@@ -82,7 +83,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 242.0
+margin_right = 230.0
 margin_bottom = 838.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -91,51 +92,51 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
-margin_right = 240.0
+margin_right = 228.0
 
 [node name="HBoxContainer6" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 84.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 164.0
 
 [node name="HBoxContainer7" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 168.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 248.0
 
 [node name="HBoxContainer8" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 252.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 332.0
 
 [node name="HBoxContainer9" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 336.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 416.0
 
 [node name="HBoxContainer10" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 420.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 500.0
 
 [node name="HBoxContainer2" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 504.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 584.0
 
 [node name="HBoxContainer3" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 588.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 668.0
 
 [node name="HBoxContainer4" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 672.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 752.0
 
 [node name="HBoxContainer5" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 756.0
-margin_right = 240.0
+margin_right = 228.0
 margin_bottom = 836.0
 
 [node name="Panel2" type="Panel" parent="Control/HSplitContainer"]
@@ -150,6 +151,7 @@ margin_bottom = 41.0
 size_flags_horizontal = 3
 theme = SubResource( 1 )
 custom_styles/panel = SubResource( 2 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -209,3 +211,7 @@ expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="gui_input" from="Panel3" to="Panel3" method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
