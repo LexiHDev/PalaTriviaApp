@@ -253,6 +253,6 @@ __meta__ = {
 
 [connection signal="gui_input" from="Panel3" to="Panel3" method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
-[connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="." method="_on_maximized_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="Panel3" method="maxi_button_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
 [connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]

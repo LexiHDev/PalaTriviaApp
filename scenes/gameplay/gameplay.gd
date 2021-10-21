@@ -10,12 +10,7 @@ func _ready() -> void:
 
 
 
-func _on_maximized_pressed():
-	if !maximized:
-		OS.window_size = OS.get_screen_size() - Vector2(1, 1)
-	else:
-		OS.window_size = size
-	maximized = !maximized
+
 
 
 
