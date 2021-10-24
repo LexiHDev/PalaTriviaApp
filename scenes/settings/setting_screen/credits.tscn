@@ -11,6 +11,4 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 bbcode_enabled = true
-bbcode_text = "[TextFile:785367]"
-text = "[TextFile:785367]"
 script = ExtResource( 1 )
