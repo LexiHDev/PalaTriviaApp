@@ -3,7 +3,11 @@
 [ext_resource path="res://scenes/settings/setting_screen/social.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
 
-[node name="social" type="VBoxContainer"]
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="social" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -13,11 +17,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="social"]
 margin_right = 1024.0
 margin_bottom = 24.0
 
-[node name="Label" type="Label" parent="HBoxContainer2"]
+[node name="Label" type="Label" parent="social/HBoxContainer2"]
 margin_right = 770.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
@@ -25,7 +29,7 @@ size_flags_vertical = 3
 text = "Username"
 valign = 1
 
-[node name="CheckButton" type="LineEdit" parent="HBoxContainer2"]
+[node name="UserField" type="LineEdit" parent="social/HBoxContainer2"]
 margin_left = 774.0
 margin_right = 1024.0
 margin_bottom = 24.0
@@ -36,24 +40,39 @@ placeholder_text = "Guest"
 placeholder_alpha = 0.643
 caret_blink = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="social"]
 margin_top = 28.0
 margin_right = 1024.0
-margin_bottom = 92.0
+margin_bottom = 128.0
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 956.0
-margin_bottom = 64.0
+[node name="Label" type="Label" parent="social/HBoxContainer"]
+margin_right = 920.0
+margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Profile Picture"
 valign = 1
 
-[node name="ColorPickerButton" type="TextureButton" parent="HBoxContainer"]
-margin_left = 960.0
+[node name="TextureButton" type="TextureButton" parent="social/HBoxContainer"]
+margin_left = 924.0
 margin_right = 1024.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
 texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 4
+
+[node name="FileDialog" type="FileDialog" parent="."]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 80.0
+window_title = "Open a File"
+mode = 0
+filters = PoolStringArray( "*.png, *.bmp, *.jpeg, *.jpg; Image Files" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="social/HBoxContainer2/UserField" to="social" method="_on_UserField_text_changed"]
+[connection signal="pressed" from="social/HBoxContainer/TextureButton" to="social" method="_on_profilepicture_pressed"]
