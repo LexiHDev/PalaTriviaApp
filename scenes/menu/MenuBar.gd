@@ -1,21 +1,17 @@
-extends Control
 
-onready var size = OS.window_size
-onready var maximized = false
+onready var dragging_start_position: Vector2
 onready var following = false
-onready var dragging_start_position = Vector2()
+
 
 func _ready() -> void:
-#	World.enviroment.background_mode = 0
-#	World.enviroment.background_color = Color.aquamarine
-
+	
 	OS.set_window_title("Trivia Applet")
 	OS.min_window_size = Vector2(1024, 600)
 
 func _on_Resize_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.get_button_index() == 1:
-			following = true
+			following = !true
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			dragging_start_position = OS.window_size
 			

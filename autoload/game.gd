@@ -10,6 +10,14 @@ var size: Vector2 setget , get_size
 
 onready var main: Main = get_node_or_null("/root/Main")
 
+func _toggle_transparency() -> void:
+	print("Toggled transparency")
+	get_tree().get_root().transparent_bg = !get_tree().get_root().transparent_bg
+func _get_transparency() -> bool:
+	return get_tree().get_root().transparent_bg
+
+func _set_bgColor(color: Color) -> void:
+	VisualServer.set_default_clear_color(color)
 
 func _ready():
 	if main == null:

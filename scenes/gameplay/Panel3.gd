@@ -4,6 +4,9 @@ onready var following = false
 onready var dragging_start_position = Vector2()
 onready var maximized = false
 onready var size = OS.window_size
+onready var or_pos = OS.window_position
+onready var settings = $"../CanvasLayer/MarginContainer/Node"
+var vis = true
 
 func _on_TitleBar_gui_input(event):
 	if event is InputEventMouseButton:
@@ -43,9 +46,23 @@ func maxi_button_pressed():
 			}
 		  }
 		}
+		toggleFullScreen()
 	""")
 	if !maximized:
 		OS.window_size = OS.get_screen_size() - Vector2(1, 1)
+		or_pos = OS.window_position
+		OS.window_position = Vector2(0,0)
 	else:
 		OS.window_size = size
+		OS.window_position = or_pos
 	maximized = !maximized
+
+
+func _on_Button_pressed(): # Settings Button
+	print(vis)
+	if vis:
+		settings.visible = false
+		vis = false
+	else: 
+		settings.visible = true
+		vis = true

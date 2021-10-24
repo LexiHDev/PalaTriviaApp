@@ -25,6 +25,7 @@ onready var active_scene_container = $ActiveSceneContainer
 
 func _enter_tree() -> void:
 	_register_size()
+# warning-ignore:return_value_discarded
 	get_tree().connect("screen_resized", self, "_on_screen_resized")
 
 
@@ -32,6 +33,7 @@ func _ready() -> void:
 	scenes = preload("res://scenes/main/scenes.gd").new()
 	scenes.name = "Scenes"
 	scenes.main = self
+# warning-ignore:return_value_discarded
 	scenes.connect("change_finished", self, "_on_Scenes_change_finished")
 	get_node("/root/").call_deferred("add_child", scenes)
 	get_tree().get_root().set_transparent_background(true)
