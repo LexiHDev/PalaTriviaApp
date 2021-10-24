@@ -124,27 +124,13 @@ label = "audio"
 text = "AUDIO"
 icon = ExtResource( 8 )
 
-[node name="Panel3" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+[node name="Panel4" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
 margin_top = 177.0
 margin_right = 243.0
 margin_bottom = 232.0
-texture = ExtResource( 8 )
-label = "user"
-
-[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel3" index="0"]
-text = "USER"
-icon = ExtResource( 8 )
-
-[node name="Panel4" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 236.0
-margin_right = 243.0
-margin_bottom = 291.0
 texture = ExtResource( 8 )
 label = "credits"
 
@@ -198,5 +184,4 @@ margin_bottom = 574.0
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel5"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel2"]
-[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel3"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel4"]

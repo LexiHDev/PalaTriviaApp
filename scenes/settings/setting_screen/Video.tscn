@@ -53,5 +53,4 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 custom_styles/normal = ExtResource( 2 )
 
-[connection signal="toggled" from="HBoxContainer2/CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="color_changed" from="HBoxContainer/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]

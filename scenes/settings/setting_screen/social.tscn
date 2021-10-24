@@ -16,7 +16,7 @@ margin_right = 1024.0
 margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
-margin_right = 962.0
+margin_right = 770.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -24,9 +24,12 @@ text = "Username"
 valign = 1
 
 [node name="CheckButton" type="LineEdit" parent="HBoxContainer2"]
-margin_left = 966.0
+margin_left = 774.0
 margin_right = 1024.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 250, 0 )
+align = 1
+max_length = 16
 placeholder_text = "Guest"
 placeholder_alpha = 0.643
 caret_blink = true
