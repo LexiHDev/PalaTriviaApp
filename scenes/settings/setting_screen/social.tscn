@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://scenes/settings/setting_screen/social.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
 
 [node name="social" type="VBoxContainer"]
@@ -7,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

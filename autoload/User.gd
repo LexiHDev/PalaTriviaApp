@@ -1,6 +1,5 @@
-extends Resource
+extends Node
 
-class_name User
 const FN = "user://save-data.json"
 var user = {
 	"user_name": "",
@@ -11,7 +10,7 @@ var user = {
 func save():
 	var file = File.new()
 	file.open(FN, File.WRITE)
-	file.store_string(to_json(User))
+	file.store_string(to_json(user))
 	file.close()
 	
 func load():
@@ -26,7 +25,10 @@ func load():
 			printerr("Corrupted data!")
 	else:
 		save()
-func update_user(username = user.user_name, wins = user.wins, pfp = user.pfp):
+func update_user(username:String = user.user_name, wins:int = user.wins, pfp:Texture = user.pfp):
 	user.user_name = username
 	user.wins = wins
 	user.pfp = pfp
+
+func get_user():
+	return user

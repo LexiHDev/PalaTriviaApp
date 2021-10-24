@@ -23,17 +23,11 @@ _global_script_classes=[ {
 "class": "Transition",
 "language": "GDScript",
 "path": "res://scenes/main/transition/transition.gd"
-}, {
-"base": "Resource",
-"class": "User",
-"language": "GDScript",
-"path": "res://autoload/User.gd"
 } ]
 _global_script_class_icons={
 "Main": "",
 "Scenes": "",
-"Transition": "",
-"User": ""
+"Transition": ""
 }
 
 [application]
@@ -48,6 +42,7 @@ config/version="0.0.4"
 [autoload]
 
 Game="*res://autoload/game.gd"
+User="*res://autoload/User.gd"
 
 [debug]
 

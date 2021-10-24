@@ -10,7 +10,6 @@ onready var transparency = $HBoxContainer2/CheckButton
 func _ready():
 	transparency.pressed = true
 	transparency.connect("toggled", self, "_on_CheckButton_toggled")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
