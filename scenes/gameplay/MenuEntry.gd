@@ -18,5 +18,5 @@ func _ready():
 
 
 func _on_TextureRect_pressed():
-	print("buttonPressed", label.to_lower())
 	emit_signal("setting_pressed", label.to_lower())
+	print("signal emitted: buttonPressed ", label.to_lower())
