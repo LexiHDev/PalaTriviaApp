@@ -5,10 +5,38 @@
 [node name="Control" type="ScrollContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 1024.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
 bbcode_enabled = true
+bbcode_text = "[center][b][color=#ffffff]﻿﻿﻿Pala's Trivia App[/color][/b]
+[b]Made by Lexi Henson[/b][/center]
+This Trivia App would not be possible without the help of many people.
+
+
+Godot Engine @ [url=https://godotengine.org/license][u][color=#00ffff]Godot Engine - License[/color]
+[/u][/url]pala1boy @ [url=http://twitch.tv/pala1boi][u][color=#00ffff]Twitch[/color]
+[/u][/url]Crystal Bit's template to help automate my workflow. [color=#00ffff]
+[/color][u][url=https://github.com/crystal-bit/godot-game-template][color=#00ffff]GitHub - crystal-bit/godot-game-template: Opinionated game template for Godot 3.3.x[/color]
+[/url][/u]The support of friends and family."
+text = "﻿﻿﻿Pala's Trivia App
+Made by Lexi Henson
+This Trivia App would not be possible without the help of many people.
+
+
+Godot Engine @ Godot Engine - License
+pala1boy @ Twitch
+Crystal Bit's template to help automate my workflow. 
+GitHub - crystal-bit/godot-game-template: Opinionated game template for Godot 3.3.x
+The support of friends and family."
+fit_content_height = true
 script = ExtResource( 1 )
+
+[connection signal="meta_clicked" from="RichTextLabel" to="RichTextLabel" method="_richtextlabel_on_meta_clicked"]

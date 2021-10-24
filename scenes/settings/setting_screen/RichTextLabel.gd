@@ -2,6 +2,10 @@ tool
 extends RichTextLabel
 
 
+func _richtextlabel_on_meta_clicked(meta):
+	OS.shell_open(str(meta))
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
