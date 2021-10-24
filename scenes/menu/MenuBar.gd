@@ -1,7 +1,7 @@
+extends Control
 
 onready var dragging_start_position: Vector2
 onready var following = false
-
 
 func _ready() -> void:
 	

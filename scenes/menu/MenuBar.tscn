@@ -67,6 +67,7 @@ shader = SubResource( 4 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -155,7 +156,6 @@ __meta__ = {
 }
 
 [node name="Node" parent="CanvasLayer/MarginContainer" instance=ExtResource( 6 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1024.0

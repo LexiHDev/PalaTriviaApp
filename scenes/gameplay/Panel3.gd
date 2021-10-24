@@ -6,6 +6,7 @@ onready var maximized = false
 onready var size = OS.window_size
 onready var or_pos = OS.window_position
 onready var settings = $"../CanvasLayer/MarginContainer/Node"
+onready var cvlayer = $"../CanvasLayer"
 var vis = true
 
 func _on_TitleBar_gui_input(event):
@@ -62,7 +63,9 @@ func _on_Button_pressed(): # Settings Button
 	print(vis)
 	if vis:
 		settings.visible = false
+		cvlayer.layer = 0
 		vis = false
 	else: 
 		settings.visible = true
+		cvlayer.layer = 2
 		vis = true
