@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://scenes/settings/setting_screen/social.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/themes/uni_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/gameplay/MenuEntry.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=8]
@@ -90,6 +91,7 @@ label = "video"
 margin_top = 3.94052
 margin_bottom = -6.05948
 text = "VIDEO"
+icon = ExtResource( 8 )
 
 [node name="Panel5" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
@@ -103,6 +105,7 @@ label = "social"
 
 [node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Panel5" index="0"]
 text = "SOCIAL"
+icon = ExtResource( 8 )
 
 [node name="Panel2" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
@@ -116,6 +119,7 @@ label = "audio"
 
 [node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Panel2" index="0"]
 text = "AUDIO"
+icon = ExtResource( 8 )
 
 [node name="Panel3" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
@@ -129,6 +133,7 @@ label = "user"
 
 [node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Panel3" index="0"]
 text = "USER"
+icon = ExtResource( 8 )
 
 [node name="Panel4" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 anchor_right = 0.0
@@ -142,6 +147,7 @@ label = "credits"
 
 [node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/VBoxContainer/Panel4" index="0"]
 text = "CREDITS"
+icon = ExtResource( 8 )
 
 [node name="bg" type="Panel" parent="Control/HSplitContainer"]
 margin_left = 307.0
@@ -167,13 +173,13 @@ follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="video" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 10 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 691.0
 margin_bottom = 574.0
 
-[node name="social" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 10 )]
-visible = false
+[node name="social" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 691.0
