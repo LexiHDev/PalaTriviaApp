@@ -145,9 +145,10 @@ expand = true
 stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 57.0
@@ -161,15 +162,16 @@ anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 543.0
 
-[node name="Control2" type="Control" parent="CanvasLayer"]
+[node name="Control2" type="Control" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -24.0
-margin_top = -26.0
-margin_right = 25.9987
-margin_bottom = 24.0
+margin_left = -25.0
+margin_top = -25.0
+margin_right = 25.0
+margin_bottom = 25.0
+mouse_default_cursor_shape = 12
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,3 +181,4 @@ __meta__ = {
 [connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="Panel3" method="maxi_button_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
+[connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]

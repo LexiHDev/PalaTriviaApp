@@ -17,33 +17,36 @@ __meta__ = {
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 32.0
+margin_bottom = 14.0
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
-margin_right = 956.0
-margin_bottom = 32.0
+margin_right = 972.0
+margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Transparent Background"
+text = "Username"
 valign = 1
 
-[node name="CheckButton" type="CheckButton" parent="HBoxContainer2"]
-margin_left = 960.0
+[node name="CheckButton" type="LineEdit" parent="HBoxContainer2"]
+margin_left = 976.0
 margin_right = 1024.0
-margin_bottom = 32.0
+margin_bottom = 14.0
 custom_styles/normal = SubResource( 1 )
+placeholder_text = "Guest"
+placeholder_alpha = 0.643
+caret_blink = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 36.0
+margin_top = 18.0
 margin_right = 1024.0
-margin_bottom = 76.0
+margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 margin_right = 980.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Opaque Background Color"
+text = "Profile Picture"
 valign = 1
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="HBoxContainer"]
@@ -53,5 +56,4 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 custom_styles/normal = ExtResource( 2 )
 
-[connection signal="toggled" from="HBoxContainer2/CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="color_changed" from="HBoxContainer/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]

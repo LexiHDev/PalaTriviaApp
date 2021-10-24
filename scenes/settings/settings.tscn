@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/gameplay/MenuEntry.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=8]
 [ext_resource path="res://scenes/settings/settings.gd" type="Script" id=9]
-[ext_resource path="res://scenes/settings/setting_screen/Video.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/settings/setting_screen/video.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0313726, 0, 0.0980392, 1 )

@@ -5,9 +5,9 @@ onready var dragging_start_position = Vector2()
 onready var maximized = false
 onready var size = OS.window_size
 onready var or_pos = OS.window_position
-onready var settings = $"../CanvasLayer/MarginContainer/Node"
+onready var settings = $"../CanvasLayer/MarginContainer"
 onready var cvlayer = $"../CanvasLayer"
-var vis = true
+var vis = false
 
 func _on_TitleBar_gui_input(event):
 	if event is InputEventMouseButton:
