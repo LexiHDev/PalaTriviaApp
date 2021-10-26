@@ -7,24 +7,14 @@
 [ext_resource path="res://assets/sprites/cross.png" type="Texture" id=5]
 [ext_resource path="res://scenes/settings/settings.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/menu/MenuBar.gd" type="Script" id=7]
+[ext_resource path="res://assets/themes/styleBox_Flat_lPurple.tres" type="StyleBox" id=8]
 
 [sub_resource type="Theme" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.231373, 0.0784314, 0.529412, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="VisualShaderNodeColorConstant" id=3]
+[sub_resource type="VisualShaderNodeColorConstant" id=2]
 constant = Color( 0.476563, 0, 1, 1 )
 
-[sub_resource type="VisualShader" id=4]
+[sub_resource type="VisualShader" id=3]
 code = "shader_type spatial;
 render_mode specular_schlick_ggx;
 
@@ -57,12 +47,12 @@ void light() {
 }
 "
 graph_offset = Vector2( 56, 21 )
-nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/node = SubResource( 2 )
 nodes/fragment/2/position = Vector2( 251, 329 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 0, 0, 5, 2, 0, 0, 7, 2, 0, 0, 8, 2, 0, 0, 15, 2, 0, 0, 17 )
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -78,30 +68,26 @@ anchor_right = 1.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 theme = SubResource( 1 )
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = ExtResource( 8 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel3"]
-anchor_left = 0.872
-anchor_top = 0.195
+anchor_left = 0.748
 anchor_right = 0.986
-anchor_bottom = 0.78
-margin_left = 0.543884
-margin_top = -0.466939
-margin_right = 0.807922
-margin_bottom = -0.451941
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="TextureButton" parent="Panel3/HBoxContainer"]
 self_modulate = Color( 0.662745, 1, 0.564706, 1 )
-material = SubResource( 5 )
-margin_right = 26.0
-margin_bottom = 35.0
+material = SubResource( 4 )
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
 size_flags_horizontal = 3
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 2 )
@@ -110,10 +96,11 @@ stretch_mode = 5
 
 [node name="Button3" type="TextureButton" parent="Panel3/HBoxContainer"]
 self_modulate = Color( 0.662745, 1, 0.564706, 1 )
-material = SubResource( 5 )
-margin_left = 30.0
-margin_right = 56.0
-margin_bottom = 35.0
+material = SubResource( 4 )
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
 size_flags_horizontal = 3
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 3 )
@@ -122,10 +109,11 @@ stretch_mode = 5
 
 [node name="Button4" type="TextureButton" parent="Panel3/HBoxContainer"]
 self_modulate = Color( 0.662745, 1, 0.564706, 1 )
-material = SubResource( 5 )
-margin_left = 60.0
-margin_right = 86.0
-margin_bottom = 35.0
+material = SubResource( 4 )
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
 size_flags_horizontal = 3
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 4 )
@@ -134,10 +122,11 @@ stretch_mode = 5
 
 [node name="Button2" type="TextureButton" parent="Panel3/HBoxContainer"]
 self_modulate = Color( 0.662745, 1, 0.564706, 1 )
-material = SubResource( 5 )
-margin_left = 90.0
-margin_right = 117.0
-margin_bottom = 35.0
+material = SubResource( 4 )
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
 size_flags_horizontal = 3
 shortcut_in_tooltip = false
 texture_normal = ExtResource( 5 )
