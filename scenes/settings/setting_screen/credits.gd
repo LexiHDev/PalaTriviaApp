@@ -13,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if auto_scrolling:
-		scroll_vertical += 2 if !rev_scroll else -20
+		scroll_vertical += 1 if !rev_scroll else -20
 		if scroll_vertical == old_scroll:
 			rev_scroll = true
 		elif scroll_vertical == 0:
