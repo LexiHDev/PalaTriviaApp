@@ -26,10 +26,6 @@ ScrollContainer/styles/bg = SubResource( 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.222656
-margin_top = -1.25719
-margin_right = 0.222656
-margin_bottom = -1.2572
 theme = ExtResource( 6 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -210,6 +206,8 @@ __meta__ = {
 
 [node name="Control3" parent="." instance=ExtResource( 2 )]
 margin_left = -1.0
+margin_top = -2.4737
 margin_right = -1.0
+margin_bottom = -2.47363
 
 [connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]
