@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/settings/setting_screen/start_game.gd" type="Script" id=1]
+
+[node name="start_game" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -478.692, 14.2677 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="social"]
+margin_right = 1024.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer2"]
+margin_right = 510.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Round Length"
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="social/HBoxContainer2"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = 30.0
+max_value = 120.0
+value = 30.0
+suffix = "seconds"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="social"]
+margin_top = 28.0
+margin_right = 1024.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rounds"
+valign = 1
+
+[node name="SpinBox2" type="SpinBox" parent="social/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 5.0
+value = 1.0
+suffix = "rounds"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="social"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 76.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer3"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Start Game"
+valign = 1
+
+[node name="SpinBox2" type="Button" parent="social/HBoxContainer3"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Click Here!"
+
+[connection signal="value_changed" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="value_changed" from="social/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
+[connection signal="pressed" from="social/HBoxContainer3/SpinBox2" to="." method="_on_SpinBox2_pressed"]

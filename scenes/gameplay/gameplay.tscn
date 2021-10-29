@@ -81,7 +81,29 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 247.0
-margin_bottom = 80.0
+margin_bottom = 81.0
+user_name = ""
+
+[node name="TextureRect" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 81.0
+margin_bottom = 81.0
+
+[node name="VBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 85.0
+margin_right = 247.0
+margin_bottom = 81.0
+
+[node name="Label" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_top = 11.0
+margin_right = 162.0
+margin_bottom = 27.0
+text = ""
+
+[node name="Label2" parent="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer" index="1"]
+margin_top = 53.0
+margin_right = 162.0
+margin_bottom = 69.0
+text = "23"
 
 [node name="Panel2" type="Panel" parent="Control/HSplitContainer"]
 margin_left = 307.0
@@ -95,6 +117,38 @@ margin_top = 11.0
 margin_right = -11.0
 margin_bottom = -11.0
 
+[node name="VSplitContainer" parent="Control/HSplitContainer/Panel2/MarginContainer" index="0"]
+margin_right = 695.0
+margin_bottom = 498.0
+
+[node name="Panel" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer" index="0"]
+margin_right = 695.0
+margin_bottom = 76.0
+
+[node name="Panel2" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer" index="1"]
+margin_top = 88.0
+margin_right = 695.0
+margin_bottom = 498.0
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer/Panel2/VBoxContainer" index="0"]
+margin_right = 685.0
+margin_bottom = 97.0
+
+[node name="ToolButton2" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer/Panel2/VBoxContainer" index="1"]
+margin_top = 101.0
+margin_right = 685.0
+margin_bottom = 198.0
+
+[node name="ToolButton3" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer/Panel2/VBoxContainer" index="2"]
+margin_top = 202.0
+margin_right = 685.0
+margin_bottom = 299.0
+
+[node name="ToolButton4" parent="Control/HSplitContainer/Panel2/MarginContainer/VSplitContainer/Panel2/VBoxContainer" index="3"]
+margin_top = 303.0
+margin_right = 685.0
+margin_bottom = 400.0
+
 [node name="Control2" type="Control" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -107,9 +161,12 @@ __meta__ = {
 }
 
 [node name="Control3" parent="." instance=ExtResource( 2 )]
-margin_left = -1.0
-margin_top = -2.4737
-margin_right = -1.0
-margin_bottom = -2.47363
+margin_left = -0.159119
+margin_top = -1.63279
+margin_right = -0.159119
+margin_bottom = -1.63275
 
 [connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]
+
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/VBoxContainer/HBoxContainer"]
+[editable path="Control/HSplitContainer/Panel2/MarginContainer"]

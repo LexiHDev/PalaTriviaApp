@@ -43,6 +43,7 @@ config/version="0.0.4"
 
 Game="*res://autoload/game.gd"
 User="*res://autoload/User.gd"
+Network="*res://autoload/network.gd"
 
 [debug]
 

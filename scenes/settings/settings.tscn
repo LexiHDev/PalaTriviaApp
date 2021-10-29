@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/settings/setting_screen/social.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/themes/uni_theme.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/settings/SettingEntries.gd" type="Script" id=3]
 [ext_resource path="res://scenes/settings/setting_screen/credits.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/settings/setting_screen/start_game.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gameplay/MenuEntry.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=8]
 [ext_resource path="res://scenes/settings/settings.gd" type="Script" id=9]
@@ -111,6 +112,7 @@ text = "SOCIAL"
 icon = ExtResource( 8 )
 
 [node name="Panel2" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
@@ -122,6 +124,20 @@ label = "audio"
 
 [node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel2" index="0"]
 text = "AUDIO"
+icon = ExtResource( 8 )
+
+[node name="Panel6" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 118.0
+margin_right = 243.0
+margin_bottom = 173.0
+texture = ExtResource( 8 )
+label = "start_game"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel6" index="0"]
+text = "START_GAME"
 icon = ExtResource( 8 )
 
 [node name="Panel4" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
@@ -173,6 +189,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 691.0
 margin_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="credits" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 4 )]
 visible = false
@@ -181,7 +199,17 @@ anchor_bottom = 0.0
 margin_right = 691.0
 margin_bottom = 574.0
 
+[node name="start_game" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 5 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 691.0
+margin_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel5"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel2"]
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel6"]
 [editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel4"]

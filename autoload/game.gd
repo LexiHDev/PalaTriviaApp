@@ -5,10 +5,21 @@
 # a specific scene.
 extends Node
 
+signal questionRecieved
+signal users_updated
+
+var users = [{
+	"user_name": "KuraiKokor0",
+	"wins": 0,
+	"pfp": load("res://assets/sprites/icon.png"),
+}]
 
 var size: Vector2 setget , get_size
 
 onready var main: Main = get_node_or_null("/root/Main")
+
+func _set_question(question):
+	emit_signal("questionRecieved", question)
 
 func _toggle_transparency() -> void:
 	print("Toggled transparency")
@@ -44,7 +55,7 @@ func _force_main_scene_load():
 	played_scene.owner = main
 
 
-func change_scene(new_scene, params= {}):
+func change_scene(new_scene, params={}):
 	main.change_scene(new_scene, params)
 
 
@@ -58,3 +69,37 @@ func get_active_scene() -> Node:
 
 func get_size():
 	return main.size
+
+func download_texture(url : String, user_name : String):
+	var http = HTTPRequest.new()
+	add_child(http)
+	http.set_download_file('user://%s.png' % user_name)
+	var err = http.request(url)
+	print(err)
+
+func update_users(new_users):
+	users = []
+	var userFile = File.new()
+	for x in new_users:
+		var texture
+		if userFile.file_exists("user://"+x.user_name+".png"):
+			var image = Image.new()
+			var err = image.load("user://"+x.user_name+".png")
+			if err != OK:
+				printerr("Failed to load image at: " + "user://"+x.user_name+".png")
+			texture = ImageTexture.new()
+			texture.create_from_image(image)
+		else:
+			download_texture(x.pfpUrl, x.user_name)
+			var image = Image.new()
+			var err = image.load("path/to/the/image.png")
+			if err != OK:
+				printerr("Failed to load image at: " + "user://"+x.user_name+".png")
+			texture = ImageTexture.new()
+			texture.create_from_image(image)
+		users.append({
+			"user_name": x.user_name,
+			"score": x.score,
+			"pfp": texture
+		})
+	emit_signal("users_updated")
