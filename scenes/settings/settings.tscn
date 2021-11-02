@@ -187,6 +187,8 @@ margin_bottom = 574.0
 [node name="social" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 691.0
 margin_bottom = 574.0
 size_flags_horizontal = 3

@@ -5,10 +5,10 @@ const blitzMode = {
 	
 }
 
-var message = {
+var defaultCmd = {
   "type": "start_game",
   "payload": {
-	"rounds":1,
+	"rounds":3,
 	"round_length":30
   }
 }
@@ -32,25 +32,25 @@ func _ready():
 #	pass
 
 
-func _on_SpinBox2_pressed():
-	Network.sendMsg(message)
-
 
 func _on_SpinBox2_value_changed(value):
-	message.payload.rounds = value
+	defaultCmd.payload.rounds = value
 
 
 func _on_SpinBox_value_changed(value):
-	message.payload.round_length = value
+	defaultCmd.payload.round_length = value
 
 
 func _on_SpinBox_item_selected(index):
+	
 	match index:
 		0:
-			pass
+			defaultCmd.payload = blitzMode
 		1:
-			pass
+			defaultCmd.payload = default
 		_:
 			print("ERROR, invalid index")
-			return 1
-	Network.sendMsg(message)
+
+
+func _on_start_game_pressed():
+	Network.sendMsg(defaultCmd)

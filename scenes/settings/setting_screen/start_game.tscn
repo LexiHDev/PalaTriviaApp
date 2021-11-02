@@ -1,6 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/settings/setting_screen/start_game.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/purpleBoxStylebox.tres" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0901961, 0.0588235, 0.14902, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.807843, 0.611765, 1, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="start_game" type="MarginContainer"]
 anchor_right = 1.0
@@ -14,6 +36,7 @@ __meta__ = {
 [node name="social" type="VBoxContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+rect_pivot_offset = Vector2( -184.434, -9.53952 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -87,27 +110,29 @@ max_value = 50.0
 value = 3.0
 suffix = "rounds"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="social"]
+[node name="HSeparator" type="HSeparator" parent="social"]
 margin_top = 80.0
 margin_right = 1024.0
-margin_bottom = 100.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 0, 15 )
+custom_styles/separator = SubResource( 5 )
 
-[node name="Label" type="Label" parent="social/HBoxContainer3"]
-margin_right = 510.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Start Game"
-valign = 1
-
-[node name="SpinBox2" type="Button" parent="social/HBoxContainer3"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-text = "Click Here!"
+[node name="Button" type="Button" parent="social"]
+margin_left = 437.0
+margin_top = 99.0
+margin_right = 587.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 6
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_constants/hseparation = 0
+text = "START GAME"
 
 [connection signal="item_selected" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_item_selected"]
 [connection signal="value_changed" from="social/HBoxContainer4/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="value_changed" from="social/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
-[connection signal="pressed" from="social/HBoxContainer3/SpinBox2" to="." method="_on_SpinBox2_pressed"]
+[connection signal="pressed" from="social/Button" to="." method="_on_start_game_pressed"]
