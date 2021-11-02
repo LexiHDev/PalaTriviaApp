@@ -22,9 +22,31 @@ __meta__ = {
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="social"]
 margin_right = 1024.0
-margin_bottom = 24.0
+margin_bottom = 20.0
 
 [node name="Label" type="Label" parent="social/HBoxContainer2"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Presets"
+valign = 1
+
+[node name="SpinBox" type="OptionButton" parent="social/HBoxContainer2"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Default"
+items = [ "Default", null, false, 0, null, "Blitz", null, false, 1, null ]
+selected = 0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="social"]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer4"]
 margin_right = 510.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
@@ -32,7 +54,7 @@ size_flags_vertical = 3
 text = "Round Length"
 valign = 1
 
-[node name="SpinBox" type="SpinBox" parent="social/HBoxContainer2"]
+[node name="SpinBox" type="SpinBox" parent="social/HBoxContainer4"]
 margin_left = 514.0
 margin_right = 1024.0
 margin_bottom = 24.0
@@ -43,9 +65,9 @@ value = 30.0
 suffix = "seconds"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="social"]
-margin_top = 28.0
+margin_top = 52.0
 margin_right = 1024.0
-margin_bottom = 52.0
+margin_bottom = 76.0
 
 [node name="Label" type="Label" parent="social/HBoxContainer"]
 margin_right = 510.0
@@ -60,15 +82,15 @@ margin_left = 514.0
 margin_right = 1024.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
-min_value = 1.0
-max_value = 5.0
-value = 1.0
+min_value = 3.0
+max_value = 50.0
+value = 3.0
 suffix = "rounds"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="social"]
-margin_top = 56.0
+margin_top = 80.0
 margin_right = 1024.0
-margin_bottom = 76.0
+margin_bottom = 100.0
 
 [node name="Label" type="Label" parent="social/HBoxContainer3"]
 margin_right = 510.0
@@ -85,6 +107,7 @@ margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Click Here!"
 
-[connection signal="value_changed" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="item_selected" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_item_selected"]
+[connection signal="value_changed" from="social/HBoxContainer4/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="value_changed" from="social/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
 [connection signal="pressed" from="social/HBoxContainer3/SpinBox2" to="." method="_on_SpinBox2_pressed"]

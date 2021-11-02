@@ -1,9 +1,13 @@
 extends MarginContainer
 
 
-var defaultCmd = {
-  "cmd": "start_game",
-  "game": {
+const blitzMode = {
+	
+}
+
+var message = {
+  "type": "start_game",
+  "payload": {
 	"rounds":1,
 	"round_length":30
   }
@@ -29,12 +33,24 @@ func _ready():
 
 
 func _on_SpinBox2_pressed():
-	Network.sendMsg(defaultCmd)
+	Network.sendMsg(message)
 
 
 func _on_SpinBox2_value_changed(value):
-	defaultCmd.game.rounds = value
+	message.payload.rounds = value
 
 
 func _on_SpinBox_value_changed(value):
-	defaultCmd.game.round_length = value
+	message.payload.round_length = value
+
+
+func _on_SpinBox_item_selected(index):
+	match index:
+		0:
+			pass
+		1:
+			pass
+		_:
+			print("ERROR, invalid index")
+			return 1
+	Network.sendMsg(message)

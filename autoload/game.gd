@@ -18,6 +18,7 @@ var size: Vector2 setget , get_size
 
 onready var main: Main = get_node_or_null("/root/Main")
 
+
 func _set_question(question):
 	emit_signal("questionRecieved", question)
 
@@ -103,3 +104,8 @@ func update_users(new_users):
 			"pfp": texture
 		})
 	emit_signal("users_updated")
+
+static func delete_children(node):
+	for n in node.get_children():
+		node.remove_child(n)
+		n.queue_free()

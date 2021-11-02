@@ -9,6 +9,13 @@ onready var settings = $"../CanvasLayer/MarginContainer"
 onready var cvlayer = $"../CanvasLayer"
 var vis = false
 
+#func _ready():
+#	var openSett = Timer.new()
+#	openSett.wait_time = 2
+#	openSett.autostart = true
+#	self.add_child(openSett)
+#	openSett.connect("timeout", self, "on_button_pressed")
+#	_on_Button_pressed()
 func _on_TitleBar_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.get_button_index() == 1:
@@ -60,7 +67,6 @@ func maxi_button_pressed():
 
 
 func _on_Button_pressed(): # Settings Button
-	print(vis)
 	if vis:
 		settings.visible = false
 		cvlayer.layer = 0

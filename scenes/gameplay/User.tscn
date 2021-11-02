@@ -55,7 +55,7 @@ margin_right = 660.0
 margin_bottom = 156.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "Pala1Boi"
+text = "test"
 autowrap = true
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
@@ -64,5 +64,5 @@ margin_right = 660.0
 margin_bottom = 458.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-text = "0"
+text = "23"
 autowrap = true

@@ -5,7 +5,7 @@ onready var size = OS.window_size
 onready var maximized = false
 onready var following = false
 onready var dragging_start_position = Vector2()
-onready var current = 'video'
+onready var current = 'social'
 
 var settings_screens = {}
 

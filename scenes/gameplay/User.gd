@@ -16,7 +16,6 @@ export var score: int = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(score)
 	texture.texture = pfp
 	label.text = user_name
 	label2.text = '%s' % score

@@ -160,15 +160,18 @@ anchor_bottom = 0.0
 margin_right = 1024.0
 margin_bottom = 520.0
 
-[node name="Control2" type="Control" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer2"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -25.0
-margin_top = -25.0
+margin_top = -35.0
 margin_right = 25.0
-margin_bottom = 25.0
+margin_bottom = 15.0
 mouse_default_cursor_shape = 12
 __meta__ = {
 "_edit_use_anchors_": false
@@ -179,4 +182,4 @@ __meta__ = {
 [connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="Panel3" method="maxi_button_pressed"]
 [connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
-[connection signal="gui_input" from="Control2" to="." method="_on_Resize_gui_input"]
+[connection signal="gui_input" from="CanvasLayer2/Control2" to="." method="_on_Resize_gui_input"]

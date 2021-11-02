@@ -24,9 +24,7 @@ func _notification(notif):
 func _input(event):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseButton:
-			print("is mousebutton")
 			if event.get_button_index() == 1:
-				print("is click")
 				following = false
 				Input.set_mouse_mode(0)
 				get_viewport().warp_mouse(OS.window_size )
