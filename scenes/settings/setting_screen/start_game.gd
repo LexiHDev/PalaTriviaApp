@@ -2,11 +2,17 @@ extends MarginContainer
 
 
 const blitzMode = {
-	
+	"rounds":20,
+	"round_length":10
+}
+
+const default = {
+	"rounds": 5,
+	"round_length": 20
 }
 
 var defaultCmd = {
-  "type": "start_game",
+  "type": "create_lobby",
   "payload": {
 	"rounds":3,
 	"round_length":30
@@ -52,5 +58,5 @@ func _on_SpinBox_item_selected(index):
 			print("ERROR, invalid index")
 
 
-func _on_start_game_pressed():
+func _on_create_lobby():
 	Network.sendMsg(defaultCmd)

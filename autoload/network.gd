@@ -40,6 +40,7 @@ func register():
 	client.get_peer(1).put_packet(packet)
 	
 func sendMsg(data) -> void:
+	print(JSON.print(data, '\t'))
 	var err = client.get_peer(1).put_packet(JSON.print(data).to_utf8())
 	
 	if err != OK:

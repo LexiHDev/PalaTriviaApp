@@ -117,13 +117,34 @@ margin_bottom = 95.0
 rect_min_size = Vector2( 0, 15 )
 custom_styles/separator = SubResource( 5 )
 
-[node name="Button" type="Button" parent="social"]
-margin_left = 437.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="social"]
 margin_top = 99.0
-margin_right = 587.0
+margin_right = 1024.0
 margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="social/HBoxContainer3"]
+margin_left = 360.0
+margin_right = 510.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 150, 50 )
-size_flags_horizontal = 6
+size_flags_horizontal = 10
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_constants/hseparation = 0
+text = "CREATE LOBBY"
+
+[node name="Button2" type="Button" parent="social/HBoxContainer3"]
+margin_left = 514.0
+margin_right = 664.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 2
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -135,4 +156,4 @@ text = "START GAME"
 [connection signal="item_selected" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_item_selected"]
 [connection signal="value_changed" from="social/HBoxContainer4/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="value_changed" from="social/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
-[connection signal="pressed" from="social/Button" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="social/HBoxContainer3/Button" to="." method="_on_create_lobby"]
