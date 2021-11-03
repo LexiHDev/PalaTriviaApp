@@ -1,0 +1,159 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/settings/setting_screen/start_game.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/purpleBoxStylebox.tres" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0901961, 0.0588235, 0.14902, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.807843, 0.611765, 1, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="start_game" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -478.692, 14.2677 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="social" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -184.434, -9.53952 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="social"]
+margin_right = 1024.0
+margin_bottom = 20.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer2"]
+margin_right = 510.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Presets"
+valign = 1
+
+[node name="SpinBox" type="OptionButton" parent="social/HBoxContainer2"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Default"
+items = [ "Default", null, false, 0, null, "Blitz", null, false, 1, null ]
+selected = 0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="social"]
+margin_top = 24.0
+margin_right = 1024.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer4"]
+margin_right = 510.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Round Length"
+valign = 1
+
+[node name="SpinBox" type="SpinBox" parent="social/HBoxContainer4"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = 30.0
+max_value = 120.0
+value = 30.0
+suffix = "seconds"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="social"]
+margin_top = 52.0
+margin_right = 1024.0
+margin_bottom = 76.0
+
+[node name="Label" type="Label" parent="social/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Rounds"
+valign = 1
+
+[node name="SpinBox2" type="SpinBox" parent="social/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = 3.0
+max_value = 50.0
+value = 3.0
+suffix = "rounds"
+
+[node name="HSeparator" type="HSeparator" parent="social"]
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 0, 15 )
+custom_styles/separator = SubResource( 1 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="social"]
+margin_top = 99.0
+margin_right = 1024.0
+margin_bottom = 149.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="social/HBoxContainer3"]
+margin_left = 360.0
+margin_right = 510.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 10
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_constants/hseparation = 0
+text = "CREATE LOBBY"
+
+[node name="Button2" type="Button" parent="social/HBoxContainer3"]
+margin_left = 514.0
+margin_right = 664.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+size_flags_horizontal = 2
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_constants/hseparation = 0
+text = "START GAME"
+
+[connection signal="item_selected" from="social/HBoxContainer2/SpinBox" to="." method="_on_SpinBox_item_selected"]
+[connection signal="value_changed" from="social/HBoxContainer4/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="value_changed" from="social/HBoxContainer/SpinBox2" to="." method="_on_SpinBox2_value_changed"]
+[connection signal="pressed" from="social/HBoxContainer3/Button" to="." method="_on_create_lobby"]

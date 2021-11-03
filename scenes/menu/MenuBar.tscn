@@ -1,0 +1,185 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/gameplay/Panel3.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/buttons/Title_Bar_Panel.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/underline.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/buttons/Minimize_Icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/buttons/Exit_Icon.png" type="Texture" id=5]
+[ext_resource path="res://scenes/settings/settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/menu/MenuBar.gd" type="Script" id=7]
+[ext_resource path="res://assets/sprites/buttons/Settings_Icon.png" type="Texture" id=8]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1024, 60 )
+margin_left = 15.7286
+margin_right = 16.6754
+
+[sub_resource type="VisualShaderNodeColorConstant" id=3]
+constant = Color( 0.476563, 0, 1, 1 )
+
+[sub_resource type="VisualShader" id=4]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Color:2
+	vec3 n_out2p0 = vec3(0.476563, 0.000000, 1.000000);
+	float n_out2p1 = 1.000000;
+
+// Output:0
+	ALBEDO = n_out2p0;
+	EMISSION = n_out2p0;
+	NORMAL = n_out2p0;
+	NORMALMAP = n_out2p0;
+	ANISOTROPY_FLOW = n_out2p0.xy;
+	TRANSMISSION = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( 56, 21 )
+nodes/fragment/2/node = SubResource( 3 )
+nodes/fragment/2/position = Vector2( 251, 329 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 0, 0, 5, 2, 0, 0, 7, 2, 0, 0, 8, 2, 0, 0, 15, 2, 0, 0, 17 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_bottom = -10.0
+mouse_filter = 2
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="."]
+anchor_right = 1.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel3"]
+anchor_left = 0.986
+anchor_right = 0.986
+margin_left = -248.832
+margin_top = 8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Panel3/HBoxContainer"]
+self_modulate = Color( 0.662745, 1, 0.564706, 1 )
+material = SubResource( 5 )
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="Button3" type="TextureButton" parent="Panel3/HBoxContainer"]
+self_modulate = Color( 0.662745, 1, 0.564706, 1 )
+material = SubResource( 5 )
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Button4" type="TextureButton" parent="Panel3/HBoxContainer"]
+self_modulate = Color( 0.662745, 1, 0.564706, 1 )
+material = SubResource( 5 )
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="Button2" type="TextureButton" parent="Panel3/HBoxContainer"]
+self_modulate = Color( 0.662745, 1, 0.564706, 1 )
+material = SubResource( 5 )
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" parent="CanvasLayer/MarginContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 520.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer2"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.0
+margin_top = -35.0
+margin_right = 25.0
+margin_bottom = 15.0
+mouse_default_cursor_shape = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="Panel3" to="Panel3" method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button" to="Panel3" method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button3" to="Panel3" method="_on_MinimizeButton_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button4" to="Panel3" method="maxi_button_pressed"]
+[connection signal="pressed" from="Panel3/HBoxContainer/Button2" to="Panel3" method="_on_CloseButton_pressed"]
+[connection signal="gui_input" from="CanvasLayer2/Control2" to="." method="_on_Resize_gui_input"]

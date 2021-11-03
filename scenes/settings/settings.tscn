@@ -1,0 +1,217 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/settings/setting_screen/social.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/themes/uni_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/settings/SettingEntries.gd" type="Script" id=3]
+[ext_resource path="res://scenes/settings/setting_screen/credits.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/settings/setting_screen/start_game.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/gameplay/MenuEntry.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=8]
+[ext_resource path="res://scenes/settings/settings.gd" type="Script" id=9]
+[ext_resource path="res://scenes/settings/setting_screen/video.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0313726, 0, 0.0980392, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=2]
+ScrollContainer/styles/bg = SubResource( 1 )
+
+[node name="Node" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 30
+dragger_visibility = 1
+
+[node name="Panel" type="Panel" parent="Control/HSplitContainer"]
+margin_right = 277.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 271, 0 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme = SubResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/HSplitContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+theme = ExtResource( 2 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HSplitContainer/Panel/ScrollContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 245.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SettingEntries" type="VBoxContainer" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer"]
+margin_right = 243.0
+margin_bottom = 566.0
+script = ExtResource( 3 )
+
+[node name="Panel5" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 243.0
+margin_bottom = 55.0
+texture = ExtResource( 8 )
+label = "social"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel5" index="0"]
+text = "SOCIAL"
+icon = ExtResource( 8 )
+
+[node name="Panel6" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 59.0
+margin_right = 243.0
+margin_bottom = 114.0
+texture = ExtResource( 8 )
+label = "start_game"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel6" index="0"]
+text = "START_GAME"
+icon = ExtResource( 8 )
+
+[node name="Panel" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 118.0
+margin_right = 243.0
+margin_bottom = 173.0
+texture = ExtResource( 8 )
+label = "video"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel" index="0"]
+margin_top = 3.94052
+margin_bottom = -6.05948
+text = "VIDEO"
+icon = ExtResource( 8 )
+
+[node name="Panel2" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 118.0
+margin_right = 243.0
+margin_bottom = 173.0
+texture = ExtResource( 8 )
+label = "audio"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel2" index="0"]
+text = "AUDIO"
+icon = ExtResource( 8 )
+
+[node name="Panel4" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 177.0
+margin_right = 243.0
+margin_bottom = 232.0
+texture = ExtResource( 8 )
+label = "credits"
+
+[node name="ToolButton" parent="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel4" index="0"]
+text = "CREDITS"
+icon = ExtResource( 8 )
+
+[node name="bg" type="Panel" parent="Control/HSplitContainer"]
+margin_left = 307.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="margins" type="MarginContainer" parent="Control/HSplitContainer/bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 13.0
+margin_top = 13.0
+margin_right = -13.0
+margin_bottom = -13.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="curSetting" type="ScrollContainer" parent="Control/HSplitContainer/bg/margins"]
+margin_right = 691.0
+margin_bottom = 574.0
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="video" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 10 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 691.0
+margin_bottom = 574.0
+
+[node name="social" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 691.0
+margin_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="credits" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 691.0
+margin_bottom = 574.0
+
+[node name="start_game" parent="Control/HSplitContainer/bg/margins/curSetting" instance=ExtResource( 5 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 691.0
+margin_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel5"]
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel6"]
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel"]
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel2"]
+[editable path="Control/HSplitContainer/Panel/ScrollContainer/MarginContainer/SettingEntries/Panel4"]
