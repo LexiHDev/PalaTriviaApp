@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/settings/setting_screen/video.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/white border.tres" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Video" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_right = 956.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Transparent Background"
+valign = 1
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer2"]
+margin_left = 960.0
+margin_right = 1024.0
+margin_bottom = 32.0
+custom_styles/normal = SubResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 36.0
+margin_right = 1024.0
+margin_bottom = 76.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 980.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Opaque Background Color"
+valign = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="HBoxContainer"]
+margin_left = 984.0
+margin_right = 1024.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+custom_styles/normal = ExtResource( 2 )
+
+[connection signal="color_changed" from="HBoxContainer/ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
