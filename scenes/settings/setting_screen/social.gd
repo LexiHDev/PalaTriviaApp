@@ -22,16 +22,18 @@ func set_username(username):
 
 var http = HTTPRequest.new()
 func download_texture(url : String):
-	add_child(http)
+#	add_child(http)
 #	http.connect("request_completed", self, "_profile_download_completed")
-	http.set_download_file('user://profilePicture.png')
-	var err = http.request(url)
-	if err != OK:
-		printerr("err: idk")
-	else:
-		print("Pfp downloaded")
-
+#	http.set_download_file('user://profilePicture.png')
+#	var err = http.request(url)
+#	if err != OK:
+#		printerr("err: idk")
+#	else:
+#		print("Pfp downloaded")
+	pass
+	
 func set_pfp(pfp: String):
+	pass
 	download_texture(pfp)
 	yield(http, "request_completed")
 	print("completed")
