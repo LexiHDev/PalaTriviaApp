@@ -20,8 +20,8 @@ var defaultCmd = {
 }
 
 onready var rounds = $social/HBoxContainer2/SpinBox
-onready var round_length = $social/HBoxContainer/SpinBox2
-onready var button = $social/HBoxContainer3/SpinBox2
+onready var round_length = $social/HBoxContainer4/SpinBox
+onready var button = $social/HBoxContainer3/Button
 
 # Declare member variables here. Examples:
 # var a = 2
